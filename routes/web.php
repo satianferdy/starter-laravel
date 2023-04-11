@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Routing\RouteGrup;
+use Illuminate\Support\Facades\Artisan;
+use GuzzleHttp\Middleware;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +26,6 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', function () {
         return view('dashboard.home');
-    })->name('home');
+    })->name('home')->middleware('can:dashboard');
 });
 
