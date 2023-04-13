@@ -13,6 +13,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
+    @stack('custom-css')
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -53,6 +54,7 @@
     <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
     <!-- JS Libraies -->
+    @stack('custom-js')
 
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
