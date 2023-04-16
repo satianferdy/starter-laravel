@@ -28,7 +28,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
             'phone' => 'nullable|numeric|digits_between:10,13',
             'bio' => 'nullable|string',
-        ])->validate();
+        ])->validateWithBag('updateProfile');
 
         if ($input['email'] !== $user->email &&
             $user instanceof MustVerifyEmail) {
