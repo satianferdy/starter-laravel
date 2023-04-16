@@ -15,6 +15,11 @@
                     <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
             </li>
+            @can('index-user')
+                <li class="nav-item dropdown">
+                    <a href="{{ route('user.index') }}" class="nav-link"><i class="fas fa-users"></i><span>User List</span></a>
+                </li>
+            @endcan
         @show
     </ul>
     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

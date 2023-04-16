@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -26,10 +27,12 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', function () {
         return view('dashboard.home');
-    })->name('home')->middleware('can:dashboard');
+    })->name('home');
 
     Route::get('edit-profile', function () {
         return view('dashboard.profile');
     })->name('profile.edit');
+
+    Route::resource('user', UserController::class);
 });
 
